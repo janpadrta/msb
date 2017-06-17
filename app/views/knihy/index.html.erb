@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Knihy</h1>
+<%= link_to 'Autoři', autori_path %>
+<%= link_to 'Žánry', zanry_path %>
+<%= link_to 'Nakladatelství', nakladatelstvi_index_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazev</th>
+      <th>Autor</th>
+      <th>Zanr</th>
+      <th>Isbn</th>
+      <th>Nakladatelstvi</th>
+      <th>Pocet stran</th>
+      <th>Vydani</th>
+      <th>Rozmer</th>
+      <th>Rok vydani</th>
+      <th>Vazba</th>
+      <th>Cena</th>
+      <th>Poznamka</th>
+      <th>Koupeno</th>
+      <th>Ziskano</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @knihy.each do |kniha| %>
+      <tr>
+        <td><%= kniha.nazev %></td>
+        <td><%= kniha.jmeno_autora %></td>
+        <td><%= kniha.nazev_zanru %></td>
+        <td><%= kniha.isbn %></td>
+        <td><%= kniha.nazev_nakladatelstvi %></td>
+        <td><%= kniha.pocet_stran %></td>
+        <td><%= kniha.vydani %></td>
+        <td><%= kniha.rozmer %></td>
+        <td><%= kniha.rok_vydani %></td>
+        <td><%= kniha.vazba %></td>
+        <td><%= kniha.cena %></td>
+        <td><%= kniha.poznamka %></td>
+        <td><%= kniha.koupeno %></td>
+        <td><%= kniha.ziskano %></td>
+        <td><%= link_to 'Show', kniha %></td>
+        <td><%= link_to 'Edit', edit_kniha_path(kniha) %></td>
+        <td><%= link_to 'Destroy', kniha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kniha', new_kniha_path %>
+
+<p><%= link_to 'Hlavní', main_index_path %></p>

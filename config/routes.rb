@@ -2,6 +2,10 @@
 
 Rails.application.routes.draw do
 
+  resources :nakladatelstvi
+  resources :zanry
+  resources :autori
+  resources :knihy
   resources :main, only: :index
   resources :technika, only: :index
   resources :datove_nosice, only: :index

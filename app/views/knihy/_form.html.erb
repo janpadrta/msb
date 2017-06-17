@@ -1,0 +1,92 @@
+<%= form_with(model: kniha, local: true) do |form| %>
+  <% if kniha.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kniha.errors.count, "error") %> prohibited this kniha from being saved:</h2>
+
+      <ul>
+      <% kniha.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nazev %>
+    <%= form.text_field :nazev, id: :kniha_nazev %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autor_id %>
+    <%= form.select :autor_id, Autor.all.collect { |p| [ p.cele_jmeno, p.id ] }, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zanr_id %>
+    <%= form.select :zanr_id, Zanr.all.collect { |p| [ p.nazev, p.id ] }, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn, id: :kniha_isbn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nakladatelstvi_id %>
+    <%= form.select :nakladatelstvi_id, Nakladatelstvi.all.collect { |p| [ p.nazev, p.id ] }, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pocet_stran %>
+    <%= form.number_field :pocet_stran, id: :kniha_pocet_stran %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vydani %>
+    <%= form.text_field :vydani, id: :kniha_vydani %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rozmer %>
+    <%= form.text_field :rozmer, id: :kniha_rozmer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rok_vydani %>
+    <%= form.text_field :rok_vydani, id: :kniha_rok_vydani %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vazba %>
+    <%= form.text_field :vazba, id: :kniha_vazba %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cena %>
+    <%= form.text_field :cena, id: :kniha_cena %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poznamka %>
+    <%= form.text_field :poznamka, id: :kniha_poznamka %>
+  </div>
+
+  <div class="field">
+    <%= form.label :popis %>
+    <%= form.text_area :popis, id: :kniha_popis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :koupeno %>
+    <%= form.check_box :koupeno, id: :kniha_koupeno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ziskano %>
+    <%= form.check_box :ziskano, id: :kniha_ziskano %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazev:</strong>
+  <%= @kniha.nazev %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @kniha.jmeno_autora %>
+</p>
+
+<p>
+  <strong>Zanr:</strong>
+  <%= @kniha.nazev_zanru %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @kniha.isbn %>
+</p>
+
+<p>
+  <strong>Nakladatelstvi:</strong>
+  <%= @kniha.nazev_nakladatelstvi %>
+</p>
+
+<p>
+  <strong>Pocet stran:</strong>
+  <%= @kniha.pocet_stran %>
+</p>
+
+<p>
+  <strong>Vydani:</strong>
+  <%= @kniha.vydani %>
+</p>
+
+<p>
+  <strong>Rozmer:</strong>
+  <%= @kniha.rozmer %>
+</p>
+
+<p>
+  <strong>Rok vydani:</strong>
+  <%= @kniha.rok_vydani %>
+</p>
+
+<p>
+  <strong>Vazba:</strong>
+  <%= @kniha.vazba %>
+</p>
+
+<p>
+  <strong>Cena:</strong>
+  <%= @kniha.cena %>
+</p>
+
+<p>
+  <strong>Poznamka:</strong>
+  <%= @kniha.poznamka %>
+</p>
+
+<p>
+  <strong>Popis:</strong>
+  <%= @kniha.popis %>
+</p>
+
+<p>
+  <strong>Koupeno:</strong>
+  <%= @kniha.koupeno %>
+</p>
+
+<p>
+  <strong>Ziskano:</strong>
+  <%= @kniha.ziskano %>
+</p>
+
+<%= link_to 'Edit', edit_kniha_path(@kniha) %> |
+<%= link_to 'Back', knihy_path %>

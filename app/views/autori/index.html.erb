@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Autori</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Jmeno</th>
+      <th>Prijmeni</th>
+      <th>Narodnost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autori.each do |autor| %>
+      <tr>
+        <td><%= autor.jmeno %></td>
+        <td><%= autor.prijmeni %></td>
+        <td><%= autor.narodnost %></td>
+        <td><%= link_to 'Show', autor %></td>
+        <td><%= link_to 'Edit', edit_autor_path(autor) %></td>
+        <td><%= link_to 'Destroy', autor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Autor', new_autor_path %>
+
+<p><%= link_to 'Hlavní', main_index_path %></p>
+<p><%= link_to 'Knihovna', knihy_path %></p>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Zanry</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazev</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zanry.each do |zanr| %>
+      <tr>
+        <td><%= zanr.nazev %></td>
+        <td><%= link_to 'Show', zanr %></td>
+        <td><%= link_to 'Edit', edit_zanr_path(zanr) %></td>
+        <td><%= link_to 'Destroy', zanr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zanr', new_zanr_path %>
+
+<p><%= link_to 'Hlavní', main_index_path %></p>
+<p><%= link_to 'Knihovna', knihy_path %></p>

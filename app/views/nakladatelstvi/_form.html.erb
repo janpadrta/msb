@@ -1,0 +1,22 @@
+<%= form_with(model: nakladatelstvi, local: true) do |form| %>
+  <% if nakladatelstvi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nakladatelstvi.errors.count, "error") %> prohibited this nakladatelstvi from being saved:</h2>
+
+      <ul>
+      <% nakladatelstvi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nazev %>
+    <%= form.text_field :nazev, id: :nakladatelstvi_nazev %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
