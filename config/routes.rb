@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'users#index'
+
+  resources :main, only: :index
+  resources :technika, only: :index
+  resources :datove_nosice, only: :index
+  resources :sbirky, only: :index
+
+  root to: 'main#index'
 
   resources :user_sessions
 

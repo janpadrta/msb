@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.oramovat {
+    border: 2px solid black;
+    text-align: center;
+    vertical-align: center;
+    font-size: large;
+    padding: 20px;
+}
+
+table.oramovat td {
+    border: 2px solid black;
+    text-align: center;
+    vertical-align: center;
+    font-size: large;
+    padding: 5px;
+}
