@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def current_users_list
-    current_users.map(&:username).join(', ')
+    # current_users.map(&:email).join(', ')
   end
 
   private
